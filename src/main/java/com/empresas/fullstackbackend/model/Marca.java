@@ -23,7 +23,8 @@ public class Marca {
     private String rut;
     private Date fechaHora;
     private String tipo;
-    private Date fecha;
+    private double horasExtras=0;
+    private boolean licenciaMedica = false;
 
 
 }

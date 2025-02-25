@@ -6,24 +6,28 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.io.Serializable;
+import java.util.Date;
+
 
 @Getter
 @Setter
 @ToString
 
+
 @Entity
 @Data
-@Table(name = "empresa")
-public class Empresa implements Serializable {
+@Table(name = "nomina")
+public class Nomina {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String rut;
-    private String razonSocial;
-    private String fechaInsercion;
+    @ManyToOne
+    @JoinColumn(name="id_empresa")
+    private Empresa empresa;
 
+    private String tipo;
 
-
+    private Date fechaInicio;
+    private Date fechaFin;
 }
